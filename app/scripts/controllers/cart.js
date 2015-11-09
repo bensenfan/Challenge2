@@ -13,7 +13,6 @@ angular.module('challenge2App')
     $scope.products = $rootScope.cart;
 
     $rootScope.$watch('cart', function(){
-    	console.log('cart change');
     	localStorageService.set('cart', $rootScope.cart);
     }, true);
   });

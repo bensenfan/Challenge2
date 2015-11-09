@@ -11,7 +11,7 @@ angular.module('challenge2App')
   .controller('ProductsCtrl', function ($scope, $rootScope, $routeParams, localStorageService, CartService) {
     
     //Find product details
-    var products = localStorageService.get('visitedProducts').concat($rootScope.products)
+    var products = localStorageService.get('visitedProducts').concat($rootScope.products);
 
     $scope.product = products.find(function(el){
     	return el.product.upc.toString() === $routeParams.upc.toString();
@@ -44,5 +44,5 @@ angular.module('challenge2App')
 
     $rootScope.$watch('visitedProducts', function(){
     	localStorageService.set('visitedProducts', $rootScope.visitedProducts);
-    })
+    });
   });
