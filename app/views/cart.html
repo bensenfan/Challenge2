@@ -1,0 +1,8 @@
+<div class='container' id="cart-container">
+	<h2>Cart</h2>
+	<div class="cart" ng-repeat="product in products">
+    <span>{{product.product.name}}</span>
+    <a ng-href="#/product/{{$index}}">link</a>
+  </div>
+  <a ng-href="#/">Back</a>
+</div>

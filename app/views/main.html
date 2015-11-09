@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Last Search: {{searchTerm}}</h2>
+  <div>
+    <div class="" ng-repeat="product in products">
+      <span>{{product.product.invoiceDescription}}</span>
+      <a ng-href="#/product/{{product.product.upc}}">link</a>
+    </div>
+  </div>
+  <br><br>
+  <div>
+    <h2>Recently Visited Products:</h2>
+    <div class="" ng-repeat="visitedProduct in visitedProducts">
+      <span>{{visitedProduct.product.invoiceDescription}}</span>
+      <a ng-href="#/product/{{visitedProduct.product.upc}}">link</a>
+    </div>
+  </div>
+</div>
