@@ -7,7 +7,7 @@ angular.module('challenge2App').service('ProductService', ['$http', '$rootScope'
 	productService.query = function(searchTerm){
 		$rootScope.searchTerm = searchTerm;
 
-		var query = 'http://api.vip.supplyhub.com:19000/products?search='+searchTerm+'&limit=10';
+		var query = 'http://api.vip.supplyhub.com:19000/products?search='+searchTerm+'&limit=100';
 				
 		$http.get(query).success(function(data /*, status, headers, config*/) {
       $rootScope.products = data;

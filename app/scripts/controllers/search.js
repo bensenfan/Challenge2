@@ -8,7 +8,7 @@
  * Controller of the challenge2App
  */
 angular.module('challenge2App')
-  .controller('SearchCtrl', function ($scope, $rootScope, $location, $routeParams, localStorageService, ProductService) {
+  .controller('SearchCtrl', function ($scope, $rootScope, $location, $routeParams, NgTableParams, localStorageService, ProductService) {
     $scope.search = function(){
     	//ProductService.query($scope.searchTerm);
     	$location.path('/search/'+$scope.searchTerm);
@@ -24,4 +24,21 @@ angular.module('challenge2App')
 	    	localStorageService.set('products', $rootScope.products);
 	    });
     }
+
+    this.tableParams = new NgTableParams(
+    		{
+    			count: 10
+    		}, 
+    		{
+    			dataset: [{
+    				brand: {
+    					name: 'Test Inc.'
+    				},
+    				product: {
+    					name: 'Test Product',
+    					invoiceDescription: 'Product description'
+    				}
+    				}]//localStorageService.get('products') //$rootScope.products
+    		}
+    	);
   });
